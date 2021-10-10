@@ -5,6 +5,7 @@ import logo from '../src/images/logo.png'
 import headshot from '../src/images/rogerluz.jpeg'
 import menu from '../src/images/collage.JPG'
 import chefathome from '../src/images/cuttingtuna.jpg'
+import Calendar from './index.js';
 
 function App() {
   const [mealData, setMealData] = useState(null);
@@ -34,11 +35,10 @@ function App() {
     <div className="App"></div>
       <section className="hero">
         <nav>
-            <img className="logo" src={logo} alt="Chef Roger logo" height="300" width="300"/>
+            <img className="logo" src={logo} alt="Chef Roger logo" height="250" width="250"/>
             <ul id="nav-list">
                 <li><a href="#about-me">About Me</a></li>
-                <li><a href="">Menu</a></li>
-                <li><a href="personalizedmenu.html">Projects</a></li>
+                <li><a href="personalizedmenu.html">Personalized Menu</a></li>
                 <li><a href="contactme.html">Contact Me</a></li>
             </ul>
             <button className="hamburger" id="hamburger">
@@ -70,14 +70,15 @@ function App() {
             <p>Born and raised in Barcelona, I've since my early age always being passionate about cooking. My intensive hard work took me to renowned restaurants like <a href="https://www.latavernadelclinic.com/">la Taverna del Clínic</a>, <a href="http://www.sensepressarestaurant.com/">the Sense Pressa</a>, Muffins, or <a href="https://www.xertarestaurant.com/barcelona-estrena-ohla-eixample-un-nuevo-hotel-cinco-estrellas/">the Ohla Eixample</a>, in addition to other places where I've passed during the 20 years of  my dedication to cooking. Three very different cooking styles that have helped me enrich myself and find my own identity.</p>
             <p> I'm a passionate of Japanese and French cuisine, but
             I cook all kinds of food, Italian, Moroccan, Oriental, Asian, Japanese, vegan, I enjoy all of them ... <strong>but my specialties are always with a touch of Asian!</strong></p>
-            <p>I'm currently Chef in the restaurant <a href="http://orvayborn.com/en/home-3/">Orvay</a> located in teh heart of teh Born district of Santa Maria del Mar. Orvay born of the passion for gastronomy and good food, a place to share and enjoy and feel at home.</p>
+            <p>I'm currently Chef in the restaurant <a href="http://orvayborn.com/en/home-3/">Orvay</a> located in the heart of teh Born district of Santa Maria del Mar. Orvay born of the passion for gastronomy and good food, a place to share and enjoy and feel at home.</p>
         </div>
         <div className="headshot-container">
             <img className="headshot" src={headshot} alt="chefroger headshot" />
         </div>
     </section>
     <section className="sub-section-project">
-        <h2>Project</h2>
+        <h2>Want to eat better, but have no time to cook?  </h2>
+        <p>Let's get started!</p>
         <div className="project-container">
             <div className="project-card">
               <section className="controls">
@@ -87,10 +88,10 @@ function App() {
                 placeholder="Calories (e.g. 3000)" 
                 onChange={handleChange} />
               </section>
-              <button onClick={getMealData}>Get Your Personalized Meal Plan</button>
-                <img className="project-image" src={menu} atl="Personalized Menu" />
+              <button onClick={getMealData}>Get Your Personalized Meal Plan </button>
+                <img className="project-image" src={menu} alt="Personalized Menu" />
                 
-                <p className="subtext"><a className="project-link" href="personalizedmenu.html">View Here</a></p>
+                <p className="subtext"><a className="project-link" href="MealList.js">View Here</a></p>
             </div>
             <div className="project-card">
                 <img className="project-image" src={chefathome} alt="Chef at Home" />
@@ -103,72 +104,16 @@ function App() {
           {mealData && <MealList mealData = {mealData} />}  
         </div> 
     </section>
-    <footer>
-       
-<div className="container">
-
+    <footer id="contact-me">
+    <img className="logo" src={logo} alt="Chef Roger logo" height="150" width="150"/>
+        <h2>Contact me</h2>
+        <p>Please don't hesitate to contact me, I'm always open for a chat!</p>
+        <div><a href="contact.html" class="email">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="50" height="50" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg></a></div>
+        <div class="sentence">
+        <par>Coded with 🧡 by Elodie</par>
+    </div>
     
-    <div className="mySlides">
-      <div className="photo1">1 / 6</div>
-        <img src="src/images/asparagus.jpeg"/>
-    </div>
-  
-    <div className="mySlides">
-      <div className="photo2">2 / 6</div>
-        <img src="src/images/duck.jpeg"/>
-    </div>
-  
-    <div className="mySlides">
-      <div className="photo3">3 / 6</div>
-        <img src="src/images/micuitfoiefras.jpeg"/>
-    </div>
-  
-    <div className="mySlides">
-      <div className="photo4">4 / 6</div>
-        <img src="src/images/tomotoessalad.jpeg"/>
-    </div>
-  
-    <div className="mySlides">
-      <div className="photo5">5 / 6</div>
-        <img src="src/images/vietnameseroll.jpeg"/>
-    </div>
-  
-    <div className="mySlides">
-      <div className="photo6">6 / 6</div>
-        <img src="src/images/tunatataki.jpg"/>
-    </div>
-  
-    
-    <a className="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a className="next" onclick="plusSlides(1)">&#10095;</a>
-  
-    
-    <div className="caption-container">
-      <p id="caption"></p>
-    </div>
-  
-    
-    <div className="row">
-      <div className="column">
-        <img className="demo cursor" src="img_woods.jpg" onclick="currentSlide(1)" alt="asparagus"/>
-      </div>
-      <div className="column">
-        <img className="demo cursor" src="img_5terre.jpg" onclick="currentSlide(2)" alt="duck"/>
-      </div>
-      <div className="column">
-        <img className="demo cursor" src="img_mountains.jpg" onclick="currentSlide(3)" alt="micuitfoiefras"/>
-      </div>
-      <div className="column">
-        <img className="demo cursor" src="img_lights.jpg" onclick="currentSlide(4)" alt="tomotoessalad"/>
-      </div>
-      <div className="column">
-        <img className="demo cursor" src="img_nature.jpg" onclick="currentSlide(5)" alt="tunatataki"/>
-      </div>
-      <div className="column">
-        <img className="demo cursor" src="img_snow.jpg" onclick="currentSlide(6)" alt="vietnameseroll"/>
-      </div>
-    </div>
-  </div>
         
     </footer>
     </>
