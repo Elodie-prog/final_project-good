@@ -6,7 +6,7 @@ export default function mealList({ mealData }) {
     console.log(mealData);
     
     return (
-        <main>
+        <main id="mealList">
             <section className="nutrients">
             <h1>Macros</h1>
             <ul>

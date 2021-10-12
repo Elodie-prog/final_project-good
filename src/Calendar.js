@@ -14,9 +14,9 @@ const ReactCalendar = () => {
     <div>
       <Calendar onChange={onChange} value={date} />
       {console.log(date)}
-      {date.toString()}
+      
       </div>
     );
   };
 
-  render(<ReactCalendar />, document.querySelector('#root"));
+  export default ReactCalendar

@@ -5,7 +5,10 @@ import logo from '../src/images/logo.png'
 import headshot from '../src/images/rogerluz.jpeg'
 import menu from '../src/images/collage.JPG'
 import chefathome from '../src/images/cuttingtuna.jpg'
-import Calendar from './index.js';
+import ReactCalendar from './Calendar';
+
+//import "bootstrap/dist/css/bootstrap.min.css";
+//import 'react-calendar/dist/Calendar.css';
 
 function App() {
   const [mealData, setMealData] = useState(null);
@@ -22,6 +25,7 @@ function App() {
     .then((response ) => response.json())
     .then((data) => {
       setMealData(data);
+      document.getElementById ("mealList").scrollIntoView();
     })
     .catch(() => {
       console.log("error");
@@ -35,7 +39,7 @@ function App() {
     <div className="App"></div>
       <section className="hero">
         <nav>
-            <img className="logo" src={logo} alt="Chef Roger logo" height="250" width="250"/>
+            <img className="logo" src={logo} alt="Chef Roger logo" height="200" width="200"/>
             <ul id="nav-list">
                 <li><a href="#about-me">About Me</a></li>
                 <li><a href="personalizedmenu.html">Personalized Menu</a></li>
@@ -91,12 +95,15 @@ function App() {
               <button onClick={getMealData}>Get Your Personalized Meal Plan </button>
                 <img className="project-image" src={menu} alt="Personalized Menu" />
                 
-                <p className="subtext"><a className="project-link" href="MealList.js">View Here</a></p>
+                <p className="subtext"><a className="project-link" href="MealList.js"></a></p>
             </div>
             <div className="project-card">
-                <img className="project-image" src={chefathome} alt="Chef at Home" />
-                <h4>Book Your Chef at Home</h4>
-                <p className="subtext"><a className="project-link" href="chefathome.htlm">View Here</a></p>
+
+              <h4>Book Your Chef at Home</h4>
+              <img className="project-image" src={chefathome} alt="Chef at Home" />
+              
+              <ReactCalendar />
+                
             </div>
                      
         </div>
@@ -105,11 +112,18 @@ function App() {
         </div> 
     </section>
     <footer id="contact-me">
-    <img className="logo" src={logo} alt="Chef Roger logo" height="150" width="150"/>
-        <h2>Contact me</h2>
-        <p>Please don't hesitate to contact me, I'm always open for a chat!</p>
-        <div><a href="contact.html" class="email">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="50" height="50" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg></a></div>
+    
+    
+        <h2>Contact Me ✉️</h2>
+        <ul className="contact-me">
+        <label>Name</label> <button></button>
+        <p><label>Email</label> <button></button></p>
+        <label>Message</label> <button></button>
+         <p><button>Submit</button></p>
+        </ul>
+        
+        
+        
         <div class="sentence">
         <par>Coded with 🧡 by Elodie</par>
     </div>

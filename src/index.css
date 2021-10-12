@@ -31,11 +31,10 @@ input {
   border-radius: 2em;
 }
 
-button {
-  padding: 0.5rem 1rem;
+button { 
   background-color: #dd8528; 
   color: white;
-  border-radius: 2em;
+  border-radius: 1em;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
 }
@@ -63,11 +62,12 @@ h1 {
 }
 
 ul {
-  list-style: none;
+  flex-direction: column;
 }
 
 img {
   margin-bottom: 1rem;
+  border-radius: 1.5em;
 }
 
 article {
@@ -131,3 +131,4 @@ article {
   padding-right: 280px;
   padding-left: 50px;
 }
+
